@@ -13,6 +13,17 @@ module.exports = {
     filename: 'main.js',
     path: outputPath, //パスというkeyで出力先の場所を指定、絶対パスで指定（nodemoduleのpathモジュールを使用する）
   },
+  module: { //loaderの設定を記述
+    rules: [
+      //個々のloaderの詳細を記述
+      {
+        test: /\.css$/,//適用するファイルを指定
+        use: [
+          'style-loader','css-loader'
+        ] //使うloaderを指定 css-loader:cssをバンドル　style-loader: styleの適用
+      },
+    ],
+  },
   devServer: {
     contentBase:outputPath,
   }
