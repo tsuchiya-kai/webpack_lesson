@@ -13,4 +13,7 @@ module.exports = {
     filename: 'main.js',
     path: outputPath, //パスというkeyで出力先の場所を指定、絶対パスで指定（nodemoduleのpathモジュールを使用する）
   },
+  devServer: {
+    contentBase:outputPath,
+  }
 };
